@@ -12,6 +12,10 @@ defmodule TwoOldestAges1 do
     _two_oldest_ages( tail, [ head, oldest ] )
   end
   
+  defp _two_oldest_ages([_ | tail], same )  do
+    _two_oldest_ages( tail, same )
+  end
+  
   defp _two_oldest_ages([ ], [scnd_oldest, oldest] )  do
     [ scnd_oldest, oldest ]
   end
